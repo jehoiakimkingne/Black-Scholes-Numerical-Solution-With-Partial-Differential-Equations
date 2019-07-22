@@ -10,5 +10,5 @@
  - This project was done in two main steps:
  
       - I first applied some simple finite difference methods such as Forward Euler or Centered Difference Scheme to a Singular Pertubations Problem and to a Poisson Problem.
-      - Then I applied these same methods to solve the Black-Scholes Equation.
+      - Then I applied these same methods to solve the Black-Scholes Equation in the case of an European Put Option.
  
