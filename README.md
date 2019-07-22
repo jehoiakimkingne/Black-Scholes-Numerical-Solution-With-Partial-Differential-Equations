@@ -9,6 +9,6 @@
       
  - This project was done in two main steps:
  
-      - I first applied some simple finite difference methods such as Forward Euler or Centered Difference Scheme to a Singular Pertubations Problem and to a Poisson Problem.
-      - Then I applied these same methods to solve the Black-Scholes Equation in the case of an European Put Option.
+      - I first applied some simple finite difference methods such as Forward Euler or Centered Difference Scheme to a Singular Pertubations Problem and to a Poisson Problem. I did a Jupyter Notebook for this one
+      - Then I applied these same methods to solve the Black-Scholes Equation in the case of an European Put Option. I did a python file for this one.
  
