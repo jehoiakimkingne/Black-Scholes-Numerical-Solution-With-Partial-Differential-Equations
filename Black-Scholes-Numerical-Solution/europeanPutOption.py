@@ -22,7 +22,7 @@ class putOption:
 
     def __init__(self):
         self.K = 110 #strike
-        self.S0 = 138.5 #Initial Stock Price
+        self.S0 = 118.5 #Initial Stock Price
         self.r = 0.01 #Risk Free Interest Rate
         self.sig = 0.16 #Volatility
         self.Smax = 250 #Largest value of the underlying asset
@@ -30,8 +30,8 @@ class putOption:
         self.var = self.sig*self.sig
         self.N = 10 #Number of time steps
         self.M = 10 #Number of stock steps
-        self.Time = (self.generate_grid_y(0, Tmax, N-2))[::-1]
-        self.Stock = self.generate_grid_y(0, Smax, M-2)
+        self.Time = (self.generate_grid_y(0, self.Tmax, self.N-2))[::-1]
+        self.Stock = self.generate_grid_y(0, self.Smax, self.M-2)
         self.deltaS = self.Stock[1]-self.Stock[0]
         self.deltaT = self.Time[1]-self.Time[0]  
     
@@ -78,7 +78,7 @@ class putOption:
     def assemble_matrix_A(self):
         self.A = np.zeros((self.M-2, self.M-2))
         for i in range(self.M-2):
-            self.A[i,i] = beta(i)
+            self.A[i,i] = self.beta(i)
             if (i-1>=0):
                 self.A[i,i-1] = self.alpha(i)
             
@@ -131,8 +131,10 @@ class putOption:
 put = putOption()
 P = put.putMatrix()
 fig = plt.figure()
-for i in range(N):
-    plt.plot(P[i],Stock)
+for i in range(put.N):
+    plt.plot(put.Stock, P[i])
 plt.show()
+
+
 
 #For better visualization, use plot_surface function from mpl_toolkits.mplot3d library
